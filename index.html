@@ -16,7 +16,6 @@
     </style>
 </head>
 <body>
-    <div id="loading">加载中，请稍候…</div>
     <canvas id="canvas" oncontextmenu="event.preventDefault()"></canvas>
 
     <script>
@@ -25,16 +24,6 @@
             dataUrl: "Release/web.data",
             codeUrl: "Release/web.js",
             memUrl: "Release/web.mem",
-            setStatus: function(text) {
-                var el = document.getElementById('loading');
-                if (!el) return;
-                if (text === '') {
-                    el.style.display = 'none';
-                } else {
-                    var match = text.match(/([^(]+)/);
-                    el.textContent = match ? match[0] : text;
-                }
-            }
         };
     </script>
     <script src="Release/UnityLoader.js"></script>
